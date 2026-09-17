@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "resellauth"
+version = "0.1.0"
+description = "Autonomous SellAuth drop-reseller engine with automated stock sync, Altcha PoW solver, real-time LTC payment settlement, and dynamic delivery webhook integration."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+keywords = ["sellauth", "reseller", "ecommerce", "litecoin", "altcha", "automation"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Office/Business :: Financial :: Point-Of-Sale",
+]
+dependencies = [
+    "fastapi>=0.110.0",
+    "uvicorn>=0.29.0",
+    "curl_cffi>=0.16.0",
+    "requests>=2.31.0",
+    "rich>=13.7.0",
+    "pydantic>=2.6.0",
+    "pydantic-settings>=2.2.0",
+    "ecdsa>=0.19.0"
+]
+
+[project.scripts]
+resellauth = "resellauth.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/DraxonV1/RESellAuth"
+Repository = "https://github.com/DraxonV1/RESellAuth.git"
+Issues = "https://github.com/DraxonV1/RESellAuth/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["resellauth*"]
