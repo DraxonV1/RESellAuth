@@ -73,6 +73,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       id-token: write  # Required for PyPI Trusted Publishing (OIDC)
+      contents: read
     steps:
       - name: Download Build Artifacts
         uses: actions/download-artifact@v4
@@ -85,3 +86,4 @@ jobs:
         with:
           packages-dir: dist/
           skip-existing: true
+          print-hash: true
